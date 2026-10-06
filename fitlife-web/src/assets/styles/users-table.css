@@ -1,0 +1,291 @@
+/* Styles pour le composant UsersTable */
+
+/* Conteneur principal du tableau */
+.userstable-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  width: 100%;
+  margin-bottom: 1.5rem; /* mb-6 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* shadow-lg, plus doux */
+  border-radius: 0.75rem; /* rounded-lg, légèrement plus arrondi */
+  background-color: #ffffff; /* bg-white */
+  border: 1px solid #e2e8f0; /* border-blueGray-200 */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.userstable-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* En-tête du tableau (titre et compte) */
+.userstable-header {
+  border-radius: 0.75rem 0.75rem 0 0; /* rounded-t-lg */
+  margin-bottom: 0;
+  padding: 1rem 1.5rem; /* px-4 py-3 */
+  border-bottom: 1px solid #e2e8f0; /* Ajout d'une bordure pour la séparation */
+  background-color: #f8fafc; /* bg-blueGray-50 */
+}
+
+.userstable-header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.userstable-title-wrapper {
+  position: relative;
+  width: 100%;
+  padding-left: 1rem; /* px-4 */
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0%;
+}
+
+.userstable-title {
+  font-weight: 600; /* font-semibold */
+  font-size: 1.25rem; /* text-xl, légèrement plus grand */
+  line-height: 1.75rem;
+  display: flex;
+  align-items: center;
+  color: #334155; /* text-blueGray-700 */
+}
+
+.userstable-icon {
+  margin-right: 0.75rem; /* mr-3 */
+}
+
+.userstable-count {
+  margin-left: 0.75rem; /* ml-3 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 400; /* font-normal */
+  color: #64748b; /* text-blueGray-500 */
+}
+
+/* Wrapper du tableau pour le défilement */
+.userstable-table-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Tableau */
+.userstable-table {
+  width: 100%;
+  background-color: transparent;
+  border-collapse: separate; /* Permet border-spacing */
+  border-spacing: 0; /* Supprime l'espacement par défaut */
+}
+
+/* En-têtes de colonne */
+.userstable-th {
+  padding: 1rem 1.5rem; /* px-6 py-3 */
+  vertical-align: middle;
+  border-bottom: 1px solid #e2e8f0; /* border-blueGray-200 */
+  font-size: 0.75rem; /* text-xs */
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600; /* font-semibold */
+  text-align: left;
+  background-color: #f1f5f9; /* bg-blueGray-100 */
+  color: #475569; /* text-blueGray-600 */
+}
+
+/* Cellules du corps du tableau */
+.userstable-td {
+  border-top: 0;
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+  vertical-align: middle;
+  font-size: 0.875rem; /* text-sm */
+  white-space: nowrap;
+  color: #374151; /* text-gray-700 */
+  border-bottom: 1px solid #f1f5f9; /* Ligne de séparation entre les cellules */
+}
+
+/* Lignes du tableau */
+.userstable-tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.userstable-tr:nth-child(even) {
+  background-color: #f8fafc; /* bg-blueGray-50, pour l'effet zébré */
+}
+
+.userstable-tr:hover {
+  background-color: #eef2f6; /* bg-blueGray-100, effet de survol */
+}
+
+/* Cellule utilisateur (nom et avatar) */
+.userstable-user-cell {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.userstable-avatar-wrapper {
+  height: 3rem; /* h-12 */
+  width: 3rem; /* w-12 */
+  background-color: #e2e8f0; /* bg-blueGray-200 */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #cbd5e1; /* border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Empêche l'avatar de rétrécir */
+}
+
+.userstable-avatar-icon {
+  font-size: 1.25rem; /* Ajustez la taille de l'icône si nécessaire */
+  color: #64748b; /* text-blueGray-500 */
+}
+
+.userstable-user-name {
+  margin-left: 0.75rem; /* ml-3 */
+  font-weight: 700; /* font-bold */
+  color: #475569; /* text-blueGray-600 */
+}
+
+/* Badge de rôle */
+.userstable-role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+}
+
+.userstable-role-badge .userstable-icon {
+  margin-right: 0.25rem; /* mr-1 */
+}
+
+/* Couleurs spécifiques aux rôles (à adapter si vous avez des couleurs fixes) */
+.userstable-role-admin {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #dc2626; /* text-red-600 */
+}
+.userstable-role-coach {
+  background-color: #dbeafe; /* bg-blue-100 */
+  color: #2563eb; /* text-blue-600 */
+}
+.userstable-role-nutritionniste {
+  background-color: #dcfce7; /* bg-green-100 */
+  color: #16a34a; /* text-green-600 */
+}
+.userstable-role-client {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Indicateur de statut */
+.userstable-status-icon {
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.userstable-status-available {
+  color: #10b981; /* text-emerald-500 */
+}
+.userstable-status-unavailable {
+  color: #ef4444; /* text-red-500 */
+}
+.userstable-status-active {
+  color: #10b981; /* text-emerald-500 */
+}
+.userstable-status-default {
+  color: #f97316; /* text-orange-500 */
+}
+
+/* Message "Aucun utilisateur trouvé" */
+.userstable-no-users {
+  padding: 1rem; /* p-4 */
+  text-align: center;
+  color: #64748b; /* text-blueGray-500 */
+  font-style: italic;
+}
+
+/* Bouton "Voir Détails" */
+.userstable-details-button {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff; /* text-white */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.375rem; /* rounded-md */
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none; /* Supprime le soulignement par défaut des liens */
+  display: inline-block; /* Pour que le padding et le margin fonctionnent correctement */
+}
+
+.userstable-details-button:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}
+
+/* Styles de pagination */
+.userstable-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem; /* p-6 */
+  border-top: 1px solid #e2e8f0; /* Séparateur */
+  background-color: #f8fafc; /* bg-blueGray-50 */
+  border-radius: 0 0 0.75rem 0.75rem; /* rounded-b-lg */
+}
+
+.userstable-pagination-button {
+  background-color: #ffffff;
+  color: #475569; /* text-blueGray-600 */
+  border: 1px solid #cbd5e1; /* border-blueGray-300 */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  margin: 0 0.25rem; /* mx-1 */
+  border-radius: 0.375rem; /* rounded-md */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.userstable-pagination-button:hover:not(:disabled) {
+  background-color: #e2e8f0; /* hover:bg-blueGray-200 */
+  border-color: #94a3b8; /* hover:border-blueGray-400 */
+}
+
+.userstable-pagination-button-active {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff; /* text-white */
+  border-color: #3b82f6; /* border-blue-500 */
+  font-weight: 600; /* font-semibold */
+}
+
+.userstable-pagination-button-active:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+  border-color: #2563eb; /* hover:border-blue-600 */
+}
+
+.userstable-pagination-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f1f5f9; /* bg-blueGray-100 */
+  color: #94a3b8; /* text-blueGray-400 */
+}
+.userstable-status-blocked {
+  color: #dc3545; /* Rouge */
+}
+
+.userstable-actions-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.userstable-icon-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #4b5563;
+  transition: color 0.2s ease;
+}
+
+.userstable-icon-button:hover {
+  color: #2563eb;
+}

@@ -1,0 +1,70 @@
+# ============================================================
+# Secrets — never commit
+# ============================================================
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p8
+*.p12
+*.pem
+*.key
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
+# ============================================================
+# Dependencies
+# ============================================================
+node_modules/
+.pnp
+.pnp.js
+
+# ============================================================
+# Build output
+# ============================================================
+dist/
+dist-ssr/
+build/
+web-build/
+.expo/
+expo-env.d.ts
+.kotlin/
+*.tsbuildinfo
+*.local
+
+# ============================================================
+# Logs
+# ============================================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================================
+# OS / editor
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.orig.*
+*.pem
+
+# ============================================================
+# Metro / debug
+# ============================================================
+.metro-health-check*
+*.hprof
+*.cxx/

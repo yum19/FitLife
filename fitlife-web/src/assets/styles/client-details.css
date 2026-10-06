@@ -1,0 +1,289 @@
+/* Styles pour la page de détails du client */
+
+/* Conteneur principal de la page */
+.client-details-page-wrapper {
+  max-width: 1280px; /* Simule le comportement du container de Tailwind */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.5rem 1rem; /* py-10 px-4 */
+  background-color: #f8fafc; /* Une légère couleur de fond pour faire ressortir les cartes */
+  min-height: 100vh; /* S'assure que le fond couvre toute la hauteur */
+}
+
+/* Titre de la page */
+.client-details-title {
+  font-size: 1.875rem; /* text-3xl, légèrement plus grand */
+  line-height: 2.25rem;
+  font-weight: 700; /* font-bold */
+  color: #334155; /* text-blueGray-700, plus foncé pour le contraste */
+  margin-bottom: 2rem; /* mb-8, plus d'espace */
+  text-align: center; /* Centrer le titre */
+}
+
+/* Style général des cartes (informations personnelles et progressions) */
+.client-details-card {
+  background-color: #ffffff; /* bg-white */
+  border: 1px solid #e2e8f0; /* border-blueGray-200, une bordure subtile */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Une ombre plus douce et plus diffuse */
+  border-radius: 0.75rem; /* rounded-xl, légèrement plus arrondi */
+  padding: 2rem; /* p-8, plus de padding */
+  margin-bottom: 2rem; /* mb-8 */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transition douce */
+}
+
+.client-details-card:hover {
+  transform: translateY(-3px); /* Léger effet de survol */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Titre à l'intérieur des cartes */
+.client-details-card-title {
+  font-size: 1.375rem; /* légèrement plus grand que text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #475569; /* text-blueGray-600 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  border-bottom: 1px solid #f1f5f9; /* Une ligne de séparation subtile */
+  padding-bottom: 0.75rem; /* padding-bottom */
+}
+
+/* Grille pour les informations personnelles */
+.client-details-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem; /* gap-6, plus d'espace */
+}
+@media (min-width: 768px) {
+  .client-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Labels et valeurs des informations */
+.client-details-label {
+  color: #64748b; /* text-blueGray-500 */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.client-details-value {
+  color: #1e293b; /* text-blueGray-800 */
+  font-weight: 400; /* font-normal */
+  display: block; /* S'assure que la valeur est sur une nouvelle ligne si nécessaire */
+}
+
+/* Sections supplémentaires dans la carte d'informations personnelles */
+.client-details-additional-info {
+  margin-top: 1.5rem; /* mt-6 */
+  padding-top: 1.5rem;
+  border-top: 1px dashed #e2e8f0; /* Ligne pointillée pour la séparation */
+}
+
+.client-details-inscription-date {
+  color: #64748b;
+  margin-top: 1rem; /* mt-4 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.client-details-photo-wrapper {
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+.client-details-profile-photo {
+  width: 6rem; /* w-24, légèrement plus grand */
+  height: 6rem; /* h-24 */
+  object-fit: cover;
+  border-radius: 9999px;
+  border: 3px solid #cbd5e1; /* Une bordure pour la photo */
+  margin-top: 0.75rem; /* mt-3 */
+}
+
+/* Section des progressions (utilise le même style de carte) */
+.client-details-progressions-card {
+  /* Hérite de .client-details-card */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.client-details-progressions-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.client-details-progressions-title {
+  /* Hérite de .client-details-card-title */
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+}
+
+/* Liste des cartes de progression */
+.client-details-progressions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Espace entre les cartes */
+}
+
+/* Carte de progression individuelle */
+.client-details-progression-item {
+  background-color: #fdfdfd; /* Fond légèrement différent pour les items */
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem; /* Coins arrondis */
+  padding: 1.25rem; /* Padding interne */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Ombre subtile */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-details-progression-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* En-tête de la carte de progression */
+.client-details-progression-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed #e2e8f0; /* Ligne de séparation */
+}
+
+.client-details-progression-icon-wrapper {
+  background-color: #e0f2fe; /* bg-blue-50 */
+  border-radius: 50%;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.client-details-progression-icon {
+  width: 1.75rem; /* w-7 */
+  height: 1.75rem; /* h-7 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.client-details-progression-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.client-details-progression-type {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  color: #334155; /* text-blueGray-700 */
+  text-transform: capitalize; /* Capitalize le type */
+}
+
+.client-details-progression-date {
+  font-size: 0.875rem; /* text-sm */
+  color: #64748b; /* text-blueGray-500 */
+}
+
+/* Corps de la carte de progression */
+.client-details-progression-body {
+  flex-grow: 1; /* Permet au corps de prendre l'espace restant */
+}
+
+.client-details-progression-value-label,
+.client-details-progression-notes-label {
+  font-size: 0.875rem; /* text-sm */
+  color: #64748b; /* text-blueGray-500 */
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.client-details-progression-value {
+  font-size: 1rem; /* text-base */
+  font-weight: 600; /* font-semibold */
+  color: #1e293b; /* text-blueGray-800 */
+}
+
+.client-details-progression-notes {
+  font-size: 0.9375rem; /* légèrement plus grand que text-sm */
+  color: #374151; /* text-gray-700 */
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+/* Message "Aucune progression" */
+.client-details-no-progressions {
+  color: #64748b;
+  text-align: center;
+  padding: 1.5rem;
+  font-style: italic;
+}
+
+/* Styles pour les messages de chargement et d'erreur */
+.client-details-loading,
+.client-details-error,
+.client-details-no-data {
+  /* Ajout de la classe pour "Client non trouvé" */
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+}
+
+.client-details-error {
+  color: #ef4444; /* text-red-500 */
+}
+
+.client-details-metrics {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.client-details-metrics-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.client-details-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.client-details-metric {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.client-details-metric-icon {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.client-details-metric-description {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.modal-overlay { position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; z-index:1000; }
+.modal-content { background:#fff; border-radius:0.75rem; padding:2rem; width:90%; max-width:500px; position:relative; }
+.modal-close-button { position:absolute; top:0.5rem; right:0.5rem; background:transparent; border:none; cursor:pointer; }
+.progression-history-list { max-height:60vh; overflow-y:auto; margin-top:1rem; display:flex; flex-direction:column; gap:0.75rem; }
+.history-item { display:flex; justify-content:space-between; padding:0.5rem; border-bottom:1px solid #e2e8f0; }
+.history-date { color:#64748b; font-size:0.875rem; }
+.history-value { font-weight:600; color:#1e293b; }
